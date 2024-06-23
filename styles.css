@@ -1,66 +1,59 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #333;
-    color: #fff;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-}
-
-.light-theme {
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-.dark-theme {
-    background-color: #333;
-    color: #fff;
 }
 
 .container {
-    text-align: center;
-}
-
-.calculator {
-    background-color: #444;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 300px;
+    max-width: 800px;
+    width: 100%;
     margin: auto;
+    padding: 20px;
+    background-color: #333333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
 }
 
-.light-theme .calculator {
-    background-color: #fff;
-}
-
-.calculator h2 {
-    margin-top: 0;
+h1 {
+    text-align: center;
 }
 
 label {
     display: block;
-    margin: 10px 0 5px;
+    margin-bottom: 5px;
 }
 
-input,
-select,
-button {
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.input-field {
     width: calc(100% - 20px);
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
 }
 
 button {
     background-color: #007bff;
-    color: #fff;
-    border: none;
+    color: #ffffff;
     cursor: pointer;
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
 }
 
 button:hover {
@@ -68,11 +61,125 @@ button:hover {
 }
 
 .theme-switcher {
-    margin-bottom: 20px;
+    text-align: right;
 }
 
-#incomeResult,
-#bonusResult {
-    margin-top: 10px;
+#settingsButton {
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    width: auto;
+}
+
+#settingsButton svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+#settingsButton:hover {
+    color: #666;
+}
+
+.payment-switch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 150px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.payment-label {
+    font-size: 14px;
+    color: #333;
+    margin: 0 10px;
+}
+
+.checkbox {
+    display: none;
+}
+
+.checkbox:checked+.switch::before {
+    transform: translateX(30px);
+}
+
+.switch {
+    position: relative;
+    width: 60px;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.switch::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 26px;
+    height: 26px;
+    background-color: #007bff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #333;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 800px;
+    height: 600px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
     font-weight: bold;
+}
+
+.close svg {
+    fill: #aaa;
+    width: 24px;
+    height: 24px;
+}
+
+.close:hover svg,
+.close:focus svg {
+    fill: #fff;
+}
+
+#settingsMenu h3 {
+    margin-top: 0;
 }
