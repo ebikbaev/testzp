@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.light-theme {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+}
+
+.calculator {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    margin: auto;
+}
+
+.light-theme .calculator {
+    background-color: #fff;
+}
+
+.calculator h2 {
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input,
+select,
+button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.theme-switcher {
+    margin-bottom: 20px;
+}
+
+#incomeResult,
+#bonusResult {
+    margin-top: 10px;
+    font-weight: bold;
+}
